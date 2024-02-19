@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('title')
-    Privacy & Policy Add | {{env('APP_NAME')}}
+    Logo Add | {{env('APP_NAME')}}
 @endsection
 
 @section('body')
@@ -23,7 +23,7 @@
                         </a>
                     </form>
                 </div>
-                <h4 class="page-title">Privacy & Policy Add</h4>
+                <h4 class="page-title">Logo Add</h4>
             </div>
         </div>
     </div>
@@ -33,35 +33,46 @@
                 <div class="card-body">
                     <div class="tab-content">
                         <div class="tab-pane show active" id="basic-form-preview">
-                            @if(isset($privacy))
-                                <form action="{{route('privacy.update',['id'=>$privacy->id])}}" method="POST" enctype="multipart/form-data">
-                                    @else
-                            <form action="{{route('privacy.new')}}" method="POST" enctype="multipart/form-data">
-                                @endif
-                                @csrf
+                            @if(isset($logo))
+                            <form action="{{route('logo.update',['id'=>$logo->id])}}" method="POST" enctype="multipart/form-data">
+                                @else
+                                <form action="{{route('logo.new')}}" method="POST" enctype="multipart/form-data">
+                                    @endif
+                                    @csrf
                                 <div class="row mb-3">
-                                    <label for="inputEmail3" class="col-md-2 col-form-label">Privacy & Policy</label>
+                                    <label class="col-md-2 col-form-label">Mobile Logo</label>
                                     <div class="col-md-10">
-                                        <textarea type="text" id="summernote" name="privacy"  class="form-control @error('privacy') is-invalid @enderror" aria-describedby="emailHelp" placeholder="Enter privacy">{{old('privacy', $privacy->privacy ?? '') }}</textarea>
-                                        @error('privacy')
+                                        @if(isset($logo))
+                                        <input type="file" name="mobile_logo" class="form-control @error('mobile_logo') is-invalid @enderror" id="exampleInputPassword1">
+                                        <img src="{{asset($logo->mobile_logo)}}" alt="" width="150" height="120">
+                                        @else
+                                            <input type="file" name="mobile_logo" class="form-control @error('mobile_logo') is-invalid @enderror" id="exampleInputPassword1">
+                                        @endif
+                                            @error('mobile_logo')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="inputEmail3" class="col-md-2 col-form-label">Condition</label>
+                                    <label class="col-md-2 col-form-label">Desktop Logo</label>
                                     <div class="col-md-10">
-                                        <textarea type="text" id="summernote2" name="condition" class="form-control @error('condition') is-invalid @enderror" aria-describedby="emailHelp" placeholder="Enter condition">{{old('condition', $privacy->condition ?? '') }}</textarea>
-                                        @error('condition')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @if(isset($logo))
+                                            <input type="file" name="desktop_logo" class="form-control @error('desktop_logo') is-invalid @enderror" id="exampleInputPassword1">
+                                            <img src="{{asset($logo->desktop_logo)}}" alt="" width="150" height="120">
+                                        @else
+                                            <input type="file" name="desktop_logo" class="form-control @error('desktop_logo') is-invalid @enderror" id="exampleInputPassword1">
+                                        @endif
+                                            @error('desktop_logo')
+                                            <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
+
 {{--                                <div class="row mb-3">--}}
 {{--                                    <label for="inputEmail3" class="col-md-2 col-form-label">Status</label>--}}
 {{--                                    <div class="col-md-10">--}}
 {{--                                        --}}{{--                                        <input type="checkbox" id="switch1" name="status" @if($notice->status == 1) checked @endif data-switch="bool"/>--}}
-{{--                                        <input type="checkbox" id="switch1" class="form-control" value="1" name="status" @if($privacy->status==1) checked @endif data-switch="bool"/>--}}
+{{--                                        <input type="checkbox" id="switch1" value="1" class="form-control" name="status" checked data-switch="bool"/>--}}
 {{--                                        <label for="switch1" data-on-label="On" data-off-label="Off"></label>--}}
 {{--                                    </div>--}}
 {{--                                </div>--}}
@@ -80,21 +91,11 @@
         </div>
         <!-- end col -->
     </div>
-    <script>
-        $('#summernote').summernote({
-            tabsize: 2,
-            height: 300
-        });
-        $('#summernote2').summernote({
-            tabsize: 2,
-            height: 300
-        });
-    </script>
     <!-- end row -->
 
-
-
 @endsection
+
+
 
 
 

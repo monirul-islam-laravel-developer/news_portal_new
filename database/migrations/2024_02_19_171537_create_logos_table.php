@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('reporters', function (Blueprint $table) {
+        Schema::create('logos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug')->nullable();
-            $table->string('designation')->nullable();
-            $table->text('image')->nullable();
-            $table->tinyInteger('status')->default('2');
+            $table->text('mobile_logo')->nullable();
+            $table->text('desktop_logo')->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reporters');
+        Schema::dropIfExists('logos');
     }
 };

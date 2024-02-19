@@ -40,6 +40,33 @@
                                             @endif
                                             @csrf
                                 <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-md-2 col-form-label">Editor and Publisher</label>
+                                    <div class="col-md-10">
+                                        <input type="text" name="publisher" value="{{old('publisher', $cantact->publisher ?? '') }}" class="form-control @error('publisher') is-invalid @enderror" aria-describedby="emailHelp" placeholder="Publisher Name">
+                                        @error('publisher')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                            <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-md-2 col-form-label">Executive Editor</label>
+                                    <div class="col-md-10">
+                                        <input type="text" name="executive" value="{{old('executive', $cantact->executive ?? '') }}" class="form-control @error('executive') is-invalid @enderror" aria-describedby="emailHelp" placeholder="Executive Name">
+                                        @error('executive')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                            <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-md-2 col-form-label">Message Editor</label>
+                                    <div class="col-md-10">
+                                        <input type="text" name="editor" value="{{old('editor', $cantact->editor ?? '') }}" class="form-control @error('editor') is-invalid @enderror" aria-describedby="emailHelp" placeholder="Editor Name">
+                                        @error('editor')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                   <div class="row mb-3">
                                     <label for="inputEmail3" class="col-md-2 col-form-label">Phone Number</label>
                                     <div class="col-md-10">
                                         <input type="number" name="phone" value="{{old('phone', $cantact->phone ?? '') }}" class="form-control @error('phone') is-invalid @enderror" aria-describedby="emailHelp" placeholder="Enter Phone Number">

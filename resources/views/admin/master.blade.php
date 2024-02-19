@@ -226,6 +226,30 @@
                     </a>
                 </li>
                 <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#sidebarEcommerce" aria-expanded="false"
+                       aria-controls="sidebarEcommerce" class="side-nav-link">
+                        <i class="uil-users-alt"></i>
+                        <span> User Module </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarEcommerce">
+                        <ul class="side-nav-second-level">
+                            <li>
+                                <a href="{{route('role.add')}}">Add Role</a>
+                            </li>
+                            <li>
+                                <a href="{{route('role.manage')}}">Manage Role</a>
+                            </li>
+                            <li>
+                                <a href="{{route('user.add')}}">Add User</a>
+                            </li>
+                            <li>
+                                <a href="{{route('user.manage')}}">Manage User</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
                     <a data-bs-toggle="collapse" href="#sidebarCategory" aria-expanded="false" aria-controls="sidebarEmail"
                        class="side-nav-link">
                         <i class="uil-list-ul"></i>
@@ -261,6 +285,41 @@
                     </div>
                 </li>
                 <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#reporter" aria-expanded="false" aria-controls="sidebarEmail"
+                       class="side-nav-link">
+                        <i class="uil-repeat"></i>
+                        <span> Reporter </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="reporter">
+                        <ul class="side-nav-second-level">
+                            <li>
+                                <a href="{{route('reporter.add')}}">Add Reporter</a>
+                            </li>
+                            <li>
+                                <a href="{{route('reporter.manage')}}">Manage Reporter</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#blogForms" aria-expanded="false" aria-controls="sidebarForms" class="side-nav-link">
+                        <i class="uil-heart"></i>
+                        <span> Notice </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="blogForms">
+                        <ul class="side-nav-second-level">
+                            <li>
+                                <a href="{{route('notice.add')}}">Add Notice</a>
+                            </li>
+                            <li>
+                                <a href="{{route('notice.manage')}}">Manage Notice</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
                     <a data-bs-toggle="collapse" href="#sidebarSlider" aria-expanded="false" aria-controls="sidebarEmail"
                        class="side-nav-link">
                         <i class="uil-sliders-v"></i>
@@ -279,71 +338,23 @@
                     </div>
                 </li>
                 <li class="side-nav-item">
-                    <a data-bs-toggle="collapse" href="#reporter" aria-expanded="false" aria-controls="sidebarEmail"
+                    <a data-bs-toggle="collapse" href="#editoralinfo" aria-expanded="false" aria-controls="sidebarEmail"
                        class="side-nav-link">
-                        <i class="uil-repeat"></i>
-                        <span> Reporter </span>
+                        <i class="uil-adjust-circle"></i>
+                        <span> Editoral </span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="reporter">
+                    <div class="collapse" id="editoralinfo">
                         <ul class="side-nav-second-level">
                             <li>
-                                <a href="{{route('reporter.add')}}">Add Slider</a>
+                                <a href="{{route('editoralinfo.add')}}">Add Editoral</a>
                             </li>
                             <li>
-                                <a href="{{route('reporter.manage')}}">Manage Slider</a>
+                                <a href="{{route('editoralinfo.manage')}}">Manage Editoral</a>
                             </li>
                         </ul>
                     </div>
                 </li>
-
-                <li class="side-nav-item">
-                    <a data-bs-toggle="collapse" href="#sidebarEcommerce" aria-expanded="false"
-                       aria-controls="sidebarEcommerce" class="side-nav-link">
-                        <i class="uil-users-alt"></i>
-                        <span> User Module </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="sidebarEcommerce">
-                        <ul class="side-nav-second-level">
-                            <li>
-                                <a href="{{route('role.add')}}">Add Role</a>
-                            </li>
-                            <li>
-                                <a href="{{route('role.manage')}}">Manage Role</a>
-                            </li>
-                            <li>
-                                <a href="{{route('user.add')}}">Add User</a>
-                            </li>
-                            <li>
-                                <a href="{{route('user.manage')}}">Manage User</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-
-
-                <li class="side-nav-item">
-                    <a data-bs-toggle="collapse" href="#sidebarPrivacy" aria-expanded="false" aria-controls="sidebarEmail"
-                       class="side-nav-link">
-                        <i class="uil-lock"></i>
-                        <span> Privacy & Policy </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="sidebarPrivacy">
-                        <ul class="side-nav-second-level">
-                            <li>
-                                <a href="{{route('privacy.add')}}">Add Privacy</a>
-                            </li>
-                            <li>
-                                <a href="{{route('privacy.manage')}}">Manage Privacy</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-
                 <li class="side-nav-item">
                     <a data-bs-toggle="collapse" href="#sidebarIcons" aria-expanded="false" aria-controls="sidebarIcons" class="side-nav-link">
                         <i class="uil-streering"></i>
@@ -377,48 +388,36 @@
                     </div>
                 </li>
                 <li class="side-nav-item">
-                    <a data-bs-toggle="collapse" href="#blogForms" aria-expanded="false" aria-controls="sidebarForms" class="side-nav-link">
-                        <i class="uil-heart"></i>
-                        <span> Blog </span>
+                    <a data-bs-toggle="collapse" href="#sidebarPrivacy" aria-expanded="false" aria-controls="sidebarEmail"
+                       class="side-nav-link">
+                        <i class="uil-lock"></i>
+                        <span> Privacy & Policy </span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="blogForms">
+                    <div class="collapse" id="sidebarPrivacy">
                         <ul class="side-nav-second-level">
                             <li>
-                                <a href="{{route('blog.add')}}">Add Blog</a>
+                                <a href="{{route('privacy.add')}}">Add Privacy</a>
                             </li>
-                            <li>
-                                <a href="{{route('blog.manage')}}">Manage Blog</a>
-                            </li>
+{{--                            <li>--}}
+{{--                                <a href="{{route('privacy.manage')}}">Manage Privacy</a>--}}
+{{--                            </li>--}}
                         </ul>
                     </div>
                 </li>
+
                 <li class="side-nav-item">
                     <a data-bs-toggle="collapse" href="#sidebarForms" aria-expanded="false" aria-controls="sidebarForms" class="side-nav-link">
                         <i class="uil-document-layout-center"></i>
-                        <span> Forms </span>
+                        <span> Logo </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarForms">
                         <ul class="side-nav-second-level">
                             <li>
-                                <a href="form-elements.html">Basic Elements</a>
+                                <a href="{{route('logo.add')}}">Add Logo</a>
                             </li>
-                            <li>
-                                <a href="form-advanced.html">Form Advanced</a>
-                            </li>
-                            <li>
-                                <a href="form-validation.html">Validation</a>
-                            </li>
-                            <li>
-                                <a href="form-wizard.html">Wizard</a>
-                            </li>
-                            <li>
-                                <a href="form-fileuploads.html">File Uploads</a>
-                            </li>
-                            <li>
-                                <a href="form-editors.html">Editors</a>
-                            </li>
+
                         </ul>
                     </div>
                 </li>

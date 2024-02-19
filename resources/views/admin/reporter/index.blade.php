@@ -33,7 +33,7 @@
                 <div class="card-body">
                     <div class="tab-content">
                         <div class="tab-pane show active" id="basic-form-preview">
-                            <form action="{{route('slider.new')}}" method="POST" enctype="multipart/form-data">
+                            <form action="{{route('reporter.new')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-md-2 col-form-label">Name</label>

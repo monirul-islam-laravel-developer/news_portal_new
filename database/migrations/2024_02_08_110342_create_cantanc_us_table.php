@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('cantanc_us', function (Blueprint $table) {
             $table->id();
+            $table->string('publisher')->nullable();
+            $table->string('executive')->nullable();
+            $table->string('editor')->nullable();
             $table->string('phone')->nullable();
             $table->string('mobile')->nullable();
             $table->string('email')->nullable();

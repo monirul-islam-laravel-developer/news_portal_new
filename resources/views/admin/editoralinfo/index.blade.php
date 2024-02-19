@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('title')
-    Privacy & Policy Add | {{env('APP_NAME')}}
+    Editoral Add | {{env('APP_NAME')}}
 @endsection
 
 @section('body')
@@ -23,7 +23,7 @@
                         </a>
                     </form>
                 </div>
-                <h4 class="page-title">Privacy & Policy Add</h4>
+                <h4 class="page-title">Editoral Add</h4>
             </div>
         </div>
     </div>
@@ -33,38 +33,44 @@
                 <div class="card-body">
                     <div class="tab-content">
                         <div class="tab-pane show active" id="basic-form-preview">
-                            @if(isset($privacy))
-                                <form action="{{route('privacy.update',['id'=>$privacy->id])}}" method="POST" enctype="multipart/form-data">
-                                    @else
-                            <form action="{{route('privacy.new')}}" method="POST" enctype="multipart/form-data">
-                                @endif
+                            <form action="{{route('editoralinfo.new')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row mb-3">
-                                    <label for="inputEmail3" class="col-md-2 col-form-label">Privacy & Policy</label>
+                                    <label for="inputEmail3" class="col-md-2 col-form-label">Name</label>
                                     <div class="col-md-10">
-                                        <textarea type="text" id="summernote" name="privacy"  class="form-control @error('privacy') is-invalid @enderror" aria-describedby="emailHelp" placeholder="Enter privacy">{{old('privacy', $privacy->privacy ?? '') }}</textarea>
-                                        @error('privacy')
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="inputEmail3" placeholder="Name"/>
+                                        @error('name')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="inputEmail3" class="col-md-2 col-form-label">Condition</label>
+                                    <label for="inputEmail3" class="col-md-2 col-form-label">Designation</label>
                                     <div class="col-md-10">
-                                        <textarea type="text" id="summernote2" name="condition" class="form-control @error('condition') is-invalid @enderror" aria-describedby="emailHelp" placeholder="Enter condition">{{old('condition', $privacy->condition ?? '') }}</textarea>
-                                        @error('condition')
+                                        <input type="text" class="form-control @error('designation') is-invalid @enderror" name="designation" id="inputEmail3" placeholder="Designation"/>
+                                        @error('designation')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
-{{--                                <div class="row mb-3">--}}
-{{--                                    <label for="inputEmail3" class="col-md-2 col-form-label">Status</label>--}}
-{{--                                    <div class="col-md-10">--}}
-{{--                                        --}}{{--                                        <input type="checkbox" id="switch1" name="status" @if($notice->status == 1) checked @endif data-switch="bool"/>--}}
-{{--                                        <input type="checkbox" id="switch1" class="form-control" value="1" name="status" @if($privacy->status==1) checked @endif data-switch="bool"/>--}}
-{{--                                        <label for="switch1" data-on-label="On" data-off-label="Off"></label>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
+                                <div class="row mb-3">
+                                    <label class="col-md-2 col-form-label">Image</label>
+                                    <div class="col-md-10">
+                                        <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="exampleInputPassword1">
+                                        @error('image')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-md-2 col-form-label">Status</label>
+                                    <div class="col-md-10">
+                                        {{--                                        <input type="checkbox" id="switch1" name="status" @if($notice->status == 1) checked @endif data-switch="bool"/>--}}
+                                        <input type="checkbox" id="switch1" value="1" class="form-control" name="status" checked data-switch="bool"/>
+                                        <label for="switch1" data-on-label="On" data-off-label="Off"></label>
+                                    </div>
+                                </div>
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-md-2 col-form-label"></label>
                                     <div class="col-md-10">
@@ -80,21 +86,11 @@
         </div>
         <!-- end col -->
     </div>
-    <script>
-        $('#summernote').summernote({
-            tabsize: 2,
-            height: 300
-        });
-        $('#summernote2').summernote({
-            tabsize: 2,
-            height: 300
-        });
-    </script>
     <!-- end row -->
 
-
-
 @endsection
+
+
 
 
 

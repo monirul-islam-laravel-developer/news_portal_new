@@ -17,6 +17,9 @@ class ContactUsController extends Controller
     public function create(Request $request)
     {
         $this->cantact= new CantancUs();
+        $this->cantact->publisher=$request->publisher;
+        $this->cantact->executive=$request->executive;
+        $this->cantact->editor=$request->editor;
         $this->cantact->phone=$request->phone;
         $this->cantact->mobile=$request->mobile;
         $this->cantact->email=$request->email;
@@ -28,6 +31,9 @@ class ContactUsController extends Controller
     public function update(Request $request,$id)
     {
         $this->cantact=CantancUs::find($id);
+        $this->cantact->publisher=$request->publisher;
+        $this->cantact->executive=$request->executive;
+        $this->cantact->editor=$request->editor;
         $this->cantact->phone=$request->phone;
         $this->cantact->mobile=$request->mobile;
         $this->cantact->email=$request->email;

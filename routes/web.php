@@ -11,8 +11,10 @@ use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactUsController;
-use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ReporterController;
+use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\EditoralInfoController;
+use App\Http\Controllers\LogoController;
 
 use App\Models\RoleRoute;
 
@@ -128,13 +130,29 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
                 Route::post('/update/{id}', [ContactUsController::class, 'update'])->name('cantact.update');
                 Route::post('/delete/{id}', [ContactUsController::class, 'delete'])->name('cantact.delete');
             });
-            Route::prefix('Blog')->group(function () {
-                Route::get('/add', [BlogController::class, 'index'])->name('blog.add');
-                Route::post('/new', [BlogController::class, 'create'])->name('blog.new');
-                Route::get('/manage', [BlogController::class, 'manage'])->name('blog.manage');
-                Route::get('/edit/{id}/{slug}', [BlogController::class, 'edit'])->name('blog.edit');
-                Route::post('/update/{id}', [BlogController::class, 'update'])->name('blog.update');
-                Route::post('/delete/{id}', [BlogController::class, 'delete'])->name('blog.delete');
+            Route::prefix('notice')->group(function () {
+                Route::get('/add', [NoticeController::class, 'index'])->name('notice.add');
+                Route::post('/new', [NoticeController::class, 'create'])->name('notice.new');
+                Route::get('/manage', [NoticeController::class, 'manage'])->name('notice.manage');
+                Route::get('/edit/{id}/{slug}',[NoticeController::class, 'edit'])->name('notice.edit');
+                Route::post('/update/{id}', [NoticeController::class, 'update'])->name('notice.update');
+                Route::post('/delete/{id}', [NoticeController::class, 'delete'])->name('notice.delete');
+            });
+            Route::prefix('editoral')->group(function () {
+                Route::get('/add', [EditoralInfoController::class, 'index'])->name('editoralinfo.add');
+                Route::post('/new', [EditoralInfoController::class, 'create'])->name('editoralinfo.new');
+                Route::get('/manage', [EditoralInfoController::class, 'manage'])->name('editoralinfo.manage');
+                Route::get('/edit/{id}/{slug}',[EditoralInfoController::class, 'edit'])->name('editoralinfo.edit');
+                Route::post('/update/{id}', [EditoralInfoController::class, 'update'])->name('editoralinfo.update');
+                Route::post('/delete/{id}', [EditoralInfoController::class, 'delete'])->name('editoralinfo.delete');
+            });
+            Route::prefix('logo')->group(function () {
+                Route::get('/add', [LogoController::class, 'index'])->name('logo.add');
+                Route::post('/new', [LogoController::class, 'create'])->name('logo.new');
+                Route::get('/manage', [LogoController::class, 'manage'])->name('logo.manage');
+                Route::get('/edit/{id}/{slug}',[LogoController::class, 'edit'])->name('logo.edit');
+                Route::post('/update/{id}', [LogoController::class, 'update'])->name('logo.update');
+                Route::post('/delete/{id}', [LogoController::class, 'delete'])->name('logo.delete');
             });
         });
     });
