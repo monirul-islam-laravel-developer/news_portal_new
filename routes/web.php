@@ -15,6 +15,7 @@ use App\Http\Controllers\ReporterController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\EditoralInfoController;
 use App\Http\Controllers\LogoController;
+use App\Http\Controllers\PostController;
 
 use App\Models\RoleRoute;
 
@@ -153,6 +154,14 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
                 Route::get('/edit/{id}/{slug}',[LogoController::class, 'edit'])->name('logo.edit');
                 Route::post('/update/{id}', [LogoController::class, 'update'])->name('logo.update');
                 Route::post('/delete/{id}', [LogoController::class, 'delete'])->name('logo.delete');
+            });
+            Route::prefix('post')->group(function () {
+                Route::get('/add', [PostController::class, 'index'])->name('post.add');
+                Route::post('/new', [PostController::class, 'create'])->name('post.new');
+                Route::get('/manage', [PostController::class, 'manage'])->name('post.manage');
+                Route::get('/edit/{id}/{slug}',[PostController::class, 'edit'])->name('post.edit');
+                Route::post('/update/{id}', [PostController::class, 'update'])->name('post.update');
+                Route::post('/delete/{id}', [PostController::class, 'delete'])->name('post.delete');
             });
         });
     });

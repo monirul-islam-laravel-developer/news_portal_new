@@ -7,9 +7,9 @@ use App\Models\RoleRoute;
 
 class PostController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        return view('post.index');
+        return view('admin.post.index');
     }
 
     public function create(Request $request)
@@ -19,17 +19,17 @@ class PostController extends Controller
 
     public function manage()
     {
-        return view('post.manage');
+        return view('admin.post.manage');
     }
 
     public function edit($id)
     {
-        return view('post.edit');
+
     }
 
     public function update(Request $request, $id)
     {
-        return $request->all();
+
     }
 
     public function delete($id)
