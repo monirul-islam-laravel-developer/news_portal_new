@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Intervention\Image\Image;
 
 class Post extends Model
 {
@@ -17,12 +19,31 @@ class Post extends Model
 
     public static function getImageUrl($request)
     {
-        self::$image=$request->file('image');
-        self::$imageName=time().'-'.self::$image->getClientOriginalName();
-        self::$directory='post-image/';
-        self::$image->move(self::$directory,self::$imageName);
-        self::$imageUrl=self::$directory.self::$imageName;
-        return self::$imageUrl;
+
+        $date = Carbon::today()->toDateString();
+        $image = $request->image;
+
+
+
+        // Set the image name and directory
+        $imageName = 'bijoybd71'.'-'.$date.'-'.time().'.'.$image->getClientOriginalExtension();
+        $directory = 'news-images/';
+        $imageUrl = $directory.$imageName;
+        // Create the directory if it doesn't exist
+        if (!file_exists($directory)) {
+            mkdir($directory, 0777, true);
+        }
+
+        // Create an Intervention Image instance
+        $img = Image::make($image->getRealPath());
+
+        $img->resize(700, 400);
+
+        // Save the image to the specified directory
+        $img->save($imageUrl);
+
+        // Return the image URL
+        return $imageUrl;
     }
     public static function newpost($request)
     {
@@ -31,8 +52,38 @@ class Post extends Model
         self::$post->subcategory_id=$request->subcategory_id;
         self::$post->reporter_id=$request->reporter_id;
         self::$post->title=$request->title;
-        self::$post->slug=Str::slug($request->title);
+        $seoKeywordss = [];
+        $wordss = explode(' ', $request->title);
+        foreach ($wordss as $words) {
+            // Remove special characters and commas using regex
+            $cleanWord = str_replace(['ঃ','|', '।', ',', '_', ':', ';', '"', "'"], '', $words);
+            if (!empty($cleanWord)) {
+                $seoKeywordss[] = strtolower($cleanWord);
+            }
+        }
+
+        self::$post->slug = implode('-', $seoKeywordss);
+
         self::$post->body=$request->body;
+        $newsContent = str_replace('&nbsp;', ' ', request()->input('body'));
+        $strippedContent = strip_tags($newsContent);
+        $shortContent = Str::limit($strippedContent, 130);
+        $midContent = Str::limit($strippedContent, 500);
+        self::$post->short_content = $shortContent;
+        self::$post->mid_content = $midContent;
+        $new_words = preg_split('/\s+/', $strippedContent, -1, PREG_SPLIT_NO_EMPTY); // Split the content into an array of words
+        $subTitleWords = array_slice($new_words, 0, 18); // Get the first 20 words
+        $subTitle = implode(' ', $subTitleWords); // Join the words back into a string with spaces
+        self::$post->sub_title = $subTitle;
+        $seoKeywords = [];
+        $words = explode(' ', $request->title);
+        foreach ($words as $word) {
+            $cleanWords = str_replace(['ঃ','|', '।', ',', '_', ':', ';', '"', "'"], '', $word);
+            if (!empty($cleanWords)) {
+                $seoKeywords[] = strtolower($cleanWords);
+            }
+        }
+        self::$post->keywords = implode(', ', $seoKeywords).','.' '.'bangla news'.','.' '.'Online news'.','.' '.'Bangladeshi news'.','.' '.'bijoybd71'.','.' '.'Daily News'.','.' '.'recent news';
         if ($request->file('image'))
         {
             self::$post->image=self::getImageUrl($request);
