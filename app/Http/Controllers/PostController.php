@@ -14,6 +14,7 @@ class PostController extends Controller
 {
     private $categories;
     private $subcategories;
+    private $categoryId;
     private $reporters;
     private $posts;
     private $post;

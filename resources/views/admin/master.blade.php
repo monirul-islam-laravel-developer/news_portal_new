@@ -303,6 +303,42 @@
                     </div>
                 </li>
                 <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#posts" aria-expanded="false" aria-controls="sidebarForms" class="side-nav-link">
+                        <i class="uil-newspaper"></i>
+                        <span> Post </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="posts">
+                        <ul class="side-nav-second-level">
+                            <li>
+                                <a href="{{route('post.add')}}">Add Post</a>
+                            </li>
+                            <li>
+                                <a href="{{route('post.manage')}}">Manage Post</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#videos" aria-expanded="false" aria-controls="sidebarForms" class="side-nav-link">
+                        <i class="uil-youtube"></i>
+                        <span> Video </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="videos">
+                        <ul class="side-nav-second-level">
+                            <li>
+                                <a href="{{route('video.add')}}">Add Post</a>
+                            </li>
+                            <li>
+                                <a href="{{route('video.manage')}}">Manage Post</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
                     <a data-bs-toggle="collapse" href="#blogForms" aria-expanded="false" aria-controls="sidebarForms" class="side-nav-link">
                         <i class="uil-heart"></i>
                         <span> Notice </span>
@@ -387,24 +423,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="side-nav-item">
-                    <a data-bs-toggle="collapse" href="#sidebarPrivacy" aria-expanded="false" aria-controls="sidebarEmail"
-                       class="side-nav-link">
-                        <i class="uil-lock"></i>
-                        <span> Privacy & Policy </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="sidebarPrivacy">
-                        <ul class="side-nav-second-level">
-                            <li>
-                                <a href="{{route('privacy.add')}}">Add Privacy</a>
-                            </li>
-{{--                            <li>--}}
-{{--                                <a href="{{route('privacy.manage')}}">Manage Privacy</a>--}}
-{{--                            </li>--}}
-                        </ul>
-                    </div>
-                </li>
+
 
                 <li class="side-nav-item">
                     <a data-bs-toggle="collapse" href="#sidebarForms" aria-expanded="false" aria-controls="sidebarForms" class="side-nav-link">
@@ -422,41 +441,24 @@
                     </div>
                 </li>
                 <li class="side-nav-item">
-                    <a data-bs-toggle="collapse" href="#posts" aria-expanded="false" aria-controls="sidebarForms" class="side-nav-link">
-                        <i class="uil-newspaper"></i>
-                        <span> Post </span>
+                    <a data-bs-toggle="collapse" href="#sidebarPrivacy" aria-expanded="false" aria-controls="sidebarEmail"
+                       class="side-nav-link">
+                        <i class="uil-lock"></i>
+                        <span> Privacy & Policy </span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="posts">
+                    <div class="collapse" id="sidebarPrivacy">
                         <ul class="side-nav-second-level">
                             <li>
-                                <a href="{{route('post.add')}}">Add Post</a>
+                                <a href="{{route('privacy.add')}}">Add Privacy</a>
                             </li>
-                            <li>
-                                <a href="{{route('post.manage')}}">Manage Post</a>
-                            </li>
-
+                            {{--                            <li>--}}
+                            {{--                                <a href="{{route('privacy.manage')}}">Manage Privacy</a>--}}
+                            {{--                            </li>--}}
                         </ul>
                     </div>
                 </li>
-                <li class="side-nav-item">
-                    <a data-bs-toggle="collapse" href="#videos" aria-expanded="false" aria-controls="sidebarForms" class="side-nav-link">
-                        <i class="uil-youtube"></i>
-                        <span> Video </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="videos">
-                        <ul class="side-nav-second-level">
-                            <li>
-                                <a href="{{route('video.add')}}">Add Post</a>
-                            </li>
-                            <li>
-                                <a href="{{route('video.manage')}}">Manage Post</a>
-                            </li>
 
-                        </ul>
-                    </div>
-                </li>
 
             </ul>
             <!--- End Sidemenu -->

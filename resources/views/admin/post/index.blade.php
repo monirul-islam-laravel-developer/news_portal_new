@@ -38,7 +38,7 @@
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-md-2 col-form-label">Category Name</label>
                                     <div class="col-md-10">
-                                        <select class="form-control @error('category_id') is-invalid @enderror" name="category_id">
+                                        <select class="form-control @error('category_id') is-invalid @enderror" name="category_id" onchange="getPostSubCategory(this.value)">
                                             <option disabled selected>--Select Category--</option>
                                             @foreach($categories as $category)
                                                 <option value="{{$category->id}}"  {{ old('category_id') == $category->id ? 'selected' : '' }}>{{$category->category_name}}</option>
@@ -52,7 +52,7 @@
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-md-2 col-form-label">Sub Category Name</label>
                                     <div class="col-md-10">
-                                        <select class="form-control @error('subcategory_id') is-invalid @enderror" name="subcategory_id">
+                                        <select class="form-control @error('subcategory_id') is-invalid @enderror" name="subcategory_id" id="subCategoryId">
                                             <option disabled selected>--Select Sub Category--</option>
                                             @foreach($subcategories as $subcategory)
                                                 <option value="{{$subcategory->id}}"  {{ old('subcategory_id') == $subcategory->id ? 'selected' : '' }}>{{$subcategory->name}}</option>
@@ -147,28 +147,40 @@
     </div>
     <!-- end row -->
     <script>
-        function previewImage(event) {
-            var input = event.target;
-            var reader = new FileReader();
-
-            reader.onload = function(){
-                var imagePreview = document.getElementById('imagePreview');
-                imagePreview.src = reader.result;
-                imagePreview.style.display = 'block';
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-
-        var imageInput = document.getElementById('imageInput');
-        imageInput.addEventListener('change', previewImage);
-    </script>
-    <script>
         $('#summernote').summernote({
             tabsize: 2,
             height: 300
         });
     </script>
+    <script>
+        function getPostSubCategory(id)
+        {
+           $.ajax(
+                {
+                    method:"GET",
+                    url:"{{url('get-sub-category-by-id')}}",
+                    data:{id:id},
+                    dataType:"JSON",
+                    success:function (response) {
+
+                        // console.log(response);
+                        var subCategoryId =$('#subCategoryId');
+                        subCategoryId.empty();
+
+                        var option ='<option value="">--Select SubCategory--</option>';
+                        option +='';
+                        $.each(response,function (key,value) {
+                            option +='<option value=" '+value.id+' ">'+value.name+' </option>';
+
+
+                        });
+                        subCategoryId.append(option);
+
+                    }
+                });
+        }
+    </script>
+
 @endsection
 
 
