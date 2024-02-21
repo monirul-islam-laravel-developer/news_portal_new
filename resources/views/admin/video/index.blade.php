@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('title')
-    Category Edit | {{env('APP_NAME')}}
+    Video Add | {{env('APP_NAME')}}
 @endsection
 
 @section('body')
@@ -23,7 +23,7 @@
                         </a>
                     </form>
                 </div>
-                <h4 class="page-title">Category Edit</h4>
+                <h4 class="page-title">Video Add</h4>
             </div>
         </div>
     </div>
@@ -33,32 +33,42 @@
                 <div class="card-body">
                     <div class="tab-content">
                         <div class="tab-pane show active" id="basic-form-preview">
-                            <form action="{{route('category.update', ['id' => $category->id])}}" method="POST" enctype="multipart/form-data">
+                            <form action="{{route('video.new')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row mb-3">
-                                    <label for="inputEmail3" class="col-md-2 col-form-label">Category Name</label>
+                                    <label for="inputEmail3" class="col-md-2 col-form-label">Name</label>
                                     <div class="col-md-10">
-                                        <input type="text" value="{{$category->category_name}}" class="form-control @error('category_name') is-invalid @enderror" name="category_name" id="inputEmail3" placeholder="Category name"/>
-                                        @error('category_name')
+                                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="inputEmail3" placeholder="Video Title"/>
+                                        @error('title')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="inputEmail3" class="col-md-2 col-form-label">Description</label>
+                                    <label for="inputEmail3" class="col-md-2 col-form-label">Link</label>
                                     <div class="col-md-10">
-                                        <textarea type="text" name="description" class="form-control @error('description') is-invalid @enderror" aria-describedby="emailHelp" placeholder="Enter Short Description">{{$category->description}}</textarea>
-                                        @error('description')
+                                        <input type="text" class="form-control @error('link') is-invalid @enderror" name="link" id="inputEmail3" placeholder="Link"/>
+                                        @error('link')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
+                                <div class="row mb-3">
+                                    <label class="col-md-2 col-form-label">Image</label>
+                                    <div class="col-md-10">
+                                        <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="exampleInputPassword1">
+                                        @error('image')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-md-2 col-form-label">Status</label>
                                     <div class="col-md-10">
                                         {{--                                        <input type="checkbox" id="switch1" name="status" @if($notice->status == 1) checked @endif data-switch="bool"/>--}}
-                                        <input type="checkbox" id="switch{{$category->id}}" class="form-control" value="1" @if($category->status == 1) checked @endif name="status" data-switch="bool"/>
-                                        <label for="switch{{$category->id}}" data-on-label="On" data-off-label="Off"></label>
+                                        <input type="checkbox" id="switch1" value="1" class="form-control" name="status" checked data-switch="bool"/>
+                                        <label for="switch1" data-on-label="On" data-off-label="Off"></label>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -78,14 +88,9 @@
     </div>
     <!-- end row -->
 
-    <script>
-        $('#summernote').summernote({
-            tabsize: 2,
-            height: 300
-        });
-    </script>
-
 @endsection
+
+
 
 
 

@@ -340,7 +340,7 @@
                 <li class="side-nav-item">
                     <a data-bs-toggle="collapse" href="#editoralinfo" aria-expanded="false" aria-controls="sidebarEmail"
                        class="side-nav-link">
-                        <i class="uil-adjust-circle"></i>
+                        <i class="uil-processor"></i>
                         <span> Editoral </span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -357,7 +357,7 @@
                 </li>
                 <li class="side-nav-item">
                     <a data-bs-toggle="collapse" href="#sidebarIcons" aria-expanded="false" aria-controls="sidebarIcons" class="side-nav-link">
-                        <i class="uil-streering"></i>
+                        <i class="uil-database"></i>
                         <span> About Us </span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -408,7 +408,7 @@
 
                 <li class="side-nav-item">
                     <a data-bs-toggle="collapse" href="#sidebarForms" aria-expanded="false" aria-controls="sidebarForms" class="side-nav-link">
-                        <i class="uil-document-layout-center"></i>
+                        <i class="uil-keyhole-circle"></i>
                         <span> Logo </span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -416,6 +416,42 @@
                         <ul class="side-nav-second-level">
                             <li>
                                 <a href="{{route('logo.add')}}">Add Logo</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#posts" aria-expanded="false" aria-controls="sidebarForms" class="side-nav-link">
+                        <i class="uil-newspaper"></i>
+                        <span> Post </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="posts">
+                        <ul class="side-nav-second-level">
+                            <li>
+                                <a href="{{route('post.add')}}">Add Post</a>
+                            </li>
+                            <li>
+                                <a href="{{route('post.manage')}}">Manage Post</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#videos" aria-expanded="false" aria-controls="sidebarForms" class="side-nav-link">
+                        <i class="uil-youtube"></i>
+                        <span> Video </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="videos">
+                        <ul class="side-nav-second-level">
+                            <li>
+                                <a href="{{route('video.add')}}">Add Post</a>
+                            </li>
+                            <li>
+                                <a href="{{route('video.manage')}}">Manage Post</a>
                             </li>
 
                         </ul>

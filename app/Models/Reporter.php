@@ -17,19 +17,19 @@ class Reporter extends Model
 
     public static function getImageUrl($request)
     {
-        self::$image=$request->file('image');
-        self::$imageName=self::$image->getClientOriginalName();
-        self::$directory='reporter-image/';
+        self::$image            =$request->file('image');
+        self::$imageName        =self::$image->getClientOriginalName();
+        self::$directory        ='reporter-image/';
         self::$image->move(self::$directory,self::$imageName);
-        self::$imageUrl=self::$directory.self::$imageName;
+        self::$imageUrl         =self::$directory.self::$imageName;
         return self::$imageUrl;
     }
     public static function newReporter($request)
     {
-        self::$reporter= new Reporter();
-        self::$reporter->name=$request->name;
+        self::$reporter              = new Reporter();
+        self::$reporter->name        =$request->name;
         self::$reporter->slug=Str::slug($request->name);
-        self::$reporter->designation=$request->designation;
+        self::$reporter->designation =$request->designation;
         if ($request->file('image'))
         {
             self::$reporter->image=self::getImageUrl($request);
@@ -49,16 +49,16 @@ class Reporter extends Model
             {
                 unlink(self::$reporter->image);
             }
-            self::$imageUrl=self::getImageUrl($request);
+            self::$imageUrl         =self::getImageUrl($request);
         }
         else
         {
             self::$imageUrl=self::$reporter->image;
         }
-        self::$reporter->name=$request->name;
+        self::$reporter->name       =$request->name;
         self::$reporter->slug=Str::slug($request->name);
         self::$reporter->designation=$request->designation;
-        self::$reporter->image=self::$imageUrl;
+        self::$reporter->image      =self::$imageUrl;
         if ($request->status==1)
         {
             self::$reporter->status=$request->status;

@@ -16,8 +16,8 @@ class CategoryController extends Controller
 
     public function create(Request $request)
     {
-        $validatedData = $request->validate([
-            'category_name' => ['required', 'unique:categories', 'max:255'],
+        $validatedData          = $request->validate([
+            'category_name'     => ['required', 'unique:categories', 'max:255'],
         ]);
        Category::newCategory($request);
         Alert::success('Category Added Successfully', '');
@@ -38,6 +38,9 @@ class CategoryController extends Controller
 
     public function update(Request $request, $id)
     {
+        $validatedData          = $request->validate([
+            'category_name'     => ['required'],
+        ]);
         Category::updateCategory($request,$id);
         Alert::success('Category update successfully', '');
         return redirect()->route('category.manage');

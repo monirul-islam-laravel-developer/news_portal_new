@@ -18,20 +18,20 @@ class Logo extends Model
 
     public static function mobileLogoUrl($request)
     {
-        self::$image=$request->file('mobile_logo');
-        self::$imageName=time().''.self::$image->getClientOriginalName();
-        self::$directory='mobile-logo-image/';
+        self::$image                 =$request->file('mobile_logo');
+        self::$imageName             =time().''.self::$image->getClientOriginalName();
+        self::$directory             ='mobile-logo-image/';
         self::$image->move(self::$directory,self::$imageName);
-        self::$imageUrl=self::$directory.self::$imageName;
+        self::$imageUrl              =self::$directory.self::$imageName;
         return self::$imageUrl;
     }
     public static function desktopLogoUrl($request)
     {
-        self::$image=$request->file('desktop_logo');
-        self::$imageName=time().''.self::$image->getClientOriginalName();
-        self::$directory='desktop-logo-image/';
+        self::$image               =$request->file('desktop_logo');
+        self::$imageName           =time().''.self::$image->getClientOriginalName();
+        self::$directory           ='desktop-logo-image/';
         self::$image->move(self::$directory,self::$imageName);
-        self::$imageUrl=self::$directory.self::$imageName;
+        self::$imageUrl            =self::$directory.self::$imageName;
         return self::$imageUrl;
     }
     public static function newLogo($request)
@@ -74,8 +74,8 @@ class Logo extends Model
         {
             self::$desktoplogo=self::$logo->desktop_logo;
         }
-        self::$logo->mobile_logo=self::$mobilelogo;
-        self::$logo->desktop_logo=self::$desktoplogo;
+        self::$logo->mobile_logo              =self::$mobilelogo;
+        self::$logo->desktop_logo             =self::$desktoplogo;
         self::$logo->save();
     }
 }

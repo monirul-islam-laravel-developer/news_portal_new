@@ -17,13 +17,13 @@ class NoticeController extends Controller
     }
     public function create(Request $request)
     {
-        $this->notice= new Noticee();
-        $this->notice->title=$request->title;
-        $this->notice->slug=Str::slug($request->title);
-        $this->notice->link=$request->link;
+        $this->notice                      = new Noticee();
+        $this->notice->title               =$request->title;
+        $this->notice->slug                =Str::slug($request->title);
+        $this->notice->link                =$request->link;
         if ($request->status==1)
         {
-            $this->notice->status=$request->status;
+            $this->notice->status          =$request->status;
         }
         $this->notice->save();
         Alert::Success('Notice Create Successfully.','');
@@ -36,22 +36,22 @@ class NoticeController extends Controller
     }
     public function edit($id)
     {
-        $this->notice=Noticee::find($id);
+        $this->notice                          =Noticee::find($id);
         return view('admin.notice.edit',['notice'=> $this->notice]);
     }
     public function update(Request $request,$id)
     {
-        $this->notice=Noticee::find($id);
-        $this->notice->title=$request->title;
-        $this->notice->slug=Str::slug($request->title);
-        $this->notice->link=$request->link;
+        $this->notice                       =Noticee::find($id);
+        $this->notice->title                =$request->title;
+        $this->notice->slug                 =Str::slug($request->title);
+        $this->notice->link                 =$request->link;
         if ($request->status==1)
         {
-            $this->notice->status=$request->status;
+            $this->notice->status           =$request->status;
         }
         else
         {
-            $this->notice->status=2;
+            $this->notice->status           =2;
         }
         $this->notice->save();
         Alert::Success('Notice Update Successfully.','');

@@ -16,16 +16,16 @@ class PrivacyController extends Controller
 
     public function create(Request $request)
     {
-        $privacy = new Privacy();
-        $privacy->privacy = $request->privacy;
-        $privacy->condition = $request->condition;
-        if ($request->status == 1)
+        $privacy              = new Privacy();
+        $privacy->privacy     = $request->privacy;
+        $privacy->condition   = $request->condition;
+        if ($request->status  == 1)
         {
-            $privacy->status = $request->status;
+            $privacy->status  = $request->status;
         }
         else
         {
-            $privacy->status = 2;
+            $privacy->status  = 2;
         }
         $privacy->save();
         Alert::success('Privacy Added Successfully', '');
@@ -46,16 +46,16 @@ class PrivacyController extends Controller
 
     public function update(Request $request, $id)
     {
-        $privacy = Privacy::find($id);
-        $privacy->privacy = $request->privacy;
-        $privacy->condition = $request->condition;
-        if ($request->status == 1)
+        $privacy              = Privacy::find($id);
+        $privacy->privacy     = $request->privacy;
+        $privacy->condition   = $request->condition;
+        if ($request->status  == 1)
         {
-            $privacy->status = $request->status;
+            $privacy->status  = $request->status;
         }
         else
         {
-            $privacy->status = 2;
+            $privacy->status  = 2;
         }
         $privacy->save();
         Alert::success('Privacy update successfully', '');

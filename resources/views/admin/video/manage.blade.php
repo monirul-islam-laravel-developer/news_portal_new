@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('title')
-    SubCategory Manage | {{env('APP_NAME')}}
+    Video Manage | {{env('APP_NAME')}}
 @endsection
 
 @section('body')
@@ -23,7 +23,7 @@
                         </a>
                     </form>
                 </div>
-                <h4 class="page-title">SubCategory Manage</h4>
+                <h4 class="page-title">Video Manage</h4>
             </div>
         </div>
     </div>
@@ -37,33 +37,33 @@
                                 <thead>
                                 <tr>
                                     <th>S.N</th>
-                                    <th>Name</th>
-                                    <th>Category Name</th>
-                                    <th>Description</th>
+                                    <th>Title</th>
+                                    <th>Image</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($subcategories as $subcategory)
+                                @foreach($videos as $video)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
-                                        <td>{{$subcategory->name}}</td>
-                                        <td>{{$subcategory->category->category_name}}</td>
-                                        <td>{{$subcategory->description}}</td>
+                                        <td>{{$video->title}}</td>
                                         <td>
-                                            @if($subcategory->status == 1)
+                                            <img src="{{asset($video->image)}}" alt="" style="height: 80px">
+                                        </td>
+                                        <td>
+                                            @if($video->status == 1)
                                                 <span class="badge badge-success-lighten">Active</span>
                                             @else
                                                 <span class="badge badge-danger-lighten">Inactive</span>
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{route('subcategory.edit', ['id' => $subcategory->id,$subcategory->slug])}}" class="btn btn-success" title="Edit"><i class="uil-edit-alt"></i></a>
-                                            <button type="button" onclick="confirmDelete({{$subcategory->id}});" class="btn btn-danger btn-sm" title="Delete">
+                                            <a href="{{route('video.edit', ['id' => $video->id])}}" class="btn btn-success" title="Edit"><i class="uil-edit-alt"></i></a>
+                                            <button type="button" onclick="confirmDelete({{$video->id}});" class="btn btn-danger btn-sm" title="Delete">
                                                 <i class="ri-chat-delete-fill"></i>
                                             </button>
-                                            <form action="{{route('subcategory.delete', ['id' =>$subcategory->id,$subcategory->slug])}}" method="POST" id="BrandDeleteForm{{$subcategory->id}}">
+                                            <form action="{{route('video.delete', ['id' =>$video->id])}}" method="POST" id="BrandDeleteForm{{$video->id}}">
                                                 @csrf
                                             </form>
                                             <script>
@@ -89,6 +89,7 @@
         </div><!-- end col-->
     </div> <!-- end row-->
 @endsection
+
 
 
 

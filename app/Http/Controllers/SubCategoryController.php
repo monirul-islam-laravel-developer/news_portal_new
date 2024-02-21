@@ -19,6 +19,10 @@ class SubCategoryController extends Controller
     }
     public function create(Request $request)
     {
+        $validated = $request->validate([
+            'category_id' => 'required',
+            'name' => 'required|unique:sub_categories'
+        ]);
         SubCategory::newSubCategory($request);
         Alert::Success('Subcategory Create Successfully','');
         return redirect()->back();
@@ -30,14 +34,18 @@ class SubCategoryController extends Controller
     }
     public function edit($id)
     {
-        $this->categories=Category::all();
-        $this->subcategory=SubCategory::find($id);
+        $this->categories           =Category::all();
+        $this->subcategory          =SubCategory::find($id);
         return view('admin.subcategory.edit',[
-            'categories'=>$this->categories,
-            'subcategory'=>$this->subcategory]);
+            'categories'            =>$this->categories,
+            'subcategory'           =>$this->subcategory]);
     }
     public function update(Request $request,$id)
     {
+        $validated = $request->validate([
+            'category_id' => 'required',
+            'name' => 'required'
+        ]);
         SubCategory::updateSubCategory($request,$id);
         Alert::Success('Subcategory Update Successfully','');
         return redirect()->route('subcategory.manage');

@@ -16,6 +16,7 @@ use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\EditoralInfoController;
 use App\Http\Controllers\LogoController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\VidioController;
 
 use App\Models\RoleRoute;
 
@@ -160,8 +161,17 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
                 Route::post('/new', [PostController::class, 'create'])->name('post.new');
                 Route::get('/manage', [PostController::class, 'manage'])->name('post.manage');
                 Route::get('/edit/{id}/{slug}',[PostController::class, 'edit'])->name('post.edit');
-                Route::post('/update/{id}', [PostController::class, 'update'])->name('post.update');
+                Route::post('/update/{id}/{slug}', [PostController::class, 'update'])->name('post.update');
                 Route::post('/delete/{id}', [PostController::class, 'delete'])->name('post.delete');
+                Route::get('/get-sub-category-by-id',[PostController::class,'getSubCategory'])->name('get-sub-category-by-id');
+            });
+            Route::prefix('video')->group(function () {
+                Route::get('/add', [VidioController::class, 'index'])->name('video.add');
+                Route::post('/new', [VidioController::class, 'create'])->name('video.new');
+                Route::get('/manage', [VidioController::class, 'manage'])->name('video.manage');
+                Route::get('/edit/{id}',[VidioController::class, 'edit'])->name('video.edit');
+                Route::post('/update/{id}', [VidioController::class, 'update'])->name('video.update');
+                Route::post('/delete/{id}', [VidioController::class, 'delete'])->name('video.delete');
             });
         });
     });

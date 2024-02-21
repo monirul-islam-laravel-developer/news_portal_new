@@ -54,19 +54,10 @@
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label class="col-md-2 col-form-label">Image</label>
-                                    <div class="col-md-10">
-                                       <input type="file" class="form-control" name="image">
-                                        @error('description')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
                                     <label for="inputEmail3" class="col-md-2 col-form-label">Status</label>
                                     <div class="col-10">
 {{--                                        <input type="checkbox" id="switch1" name="status" @if($notice->status == 1) checked @endif data-switch="bool"/>--}}
-                                        <input type="checkbox" id="switch1" value="1" class="form-control" name="status" data-switch="bool"/>
+                                        <input type="checkbox" id="switch1" value="1" class="form-control" name="status" checked data-switch="bool"/>
                                         <label for="switch1" data-on-label="On" data-off-label="Off"></label>
                                     </div>
                                 </div>

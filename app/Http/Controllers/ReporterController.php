@@ -14,6 +14,9 @@ class ReporterController extends Controller
     }
     public function create(Request $request)
     {
+        $validatedData          = $request->validate([
+            'name'     => ['required',],
+        ]);
         Reporter::newReporter($request);
         Alert::Success('Reporter Add Successfully','');
         return redirect()->back();
@@ -30,6 +33,9 @@ class ReporterController extends Controller
     }
     public function update(Request $request,$id)
     {
+            $validatedData          = $request->validate([
+                'name'     => ['required',],
+            ]);
         Reporter::updateReporter($request,$id);
         Alert::Success('Reporter Update Successfully','');
         return redirect()->route('reporter.manage');

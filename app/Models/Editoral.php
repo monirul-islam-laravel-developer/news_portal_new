@@ -17,32 +17,32 @@ class Editoral extends Model
 
     public static function getImageUrl($request)
     {
-        self::$image=$request->file('image');
-        self::$imageName=self::$image->getClientOriginalName();
+        self::$image                    =$request->file('image');
+        self::$imageName                =self::$image->getClientOriginalName();
         self::$directory='editoral-image/';
         self::$image->move(self::$directory,self::$imageName);
-        self::$imageUrl=self::$directory.self::$imageName;
+        self::$imageUrl               =self::$directory.self::$imageName;
         return self::$imageUrl;
     }
     public static function newEditoral($request)
     {
-        self::$editoral= new Editoral();
-        self::$editoral->name=$request->name;
+        self::$editoral                    = new Editoral();
+        self::$editoral->name              =$request->name;
         self::$editoral->slug=Str::slug($request->name);
-        self::$editoral->designation=$request->designation;
+        self::$editoral->designation       =$request->designation;
         if ($request->file('image'))
         {
-            self::$editoral->image=self::getImageUrl($request);
+            self::$editoral->image        =self::getImageUrl($request);
         }
         if ($request->status==1)
         {
-            self::$editoral->status=$request->status;
+            self::$editoral->status       =$request->status;
         }
         self::$editoral->save();
     }
     public static function updateEditoral($request,$id)
     {
-        self::$editoral=Editoral::find($id);
+        self::$editoral                 =Editoral::find($id);
         if ($request->file('image'))
         {
             if (file_exists(self::$editoral->image))
@@ -55,13 +55,13 @@ class Editoral extends Model
         {
             self::$imageUrl=self::$editoral->image;
         }
-        self::$editoral->name=$request->name;
-        self::$editoral->slug=Str::slug($request->name);
-        self::$editoral->designation=$request->designation;
+        self::$editoral->name            =$request->name;
+        self::$editoral->slug            =Str::slug($request->name);
+        self::$editoral->designation     =$request->designation;
         self::$editoral->image=self::$imageUrl;
         if ($request->status==1)
         {
-            self::$editoral->status=$request->status;
+            self::$editoral->status       =$request->status;
         }
         else
         {

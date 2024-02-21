@@ -36,6 +36,20 @@
                             <form action="{{route('subcategory.update',['id'=>$subcategory->id,$subcategory->slug])}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-md-2 col-form-label">Category Name</label>
+                                    <div class="col-md-10">
+                                        <select class="form-control @error('category_id') is-invalid @enderror" name="category_id">
+                                            <option disabled selected>--Select Category--</option>
+                                            @foreach($categories as $category)
+                                                <option value="{{$category->id}}" {{$category->id==$subcategory->category_id ? 'selected' : ''}}>{{$category->category_name}}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('category_id')
+                                        <strong class="text-danger">{{ $message }}</strong>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
                                     <label for="inputEmail3" class="col-md-2 col-form-label">Name</label>
                                     <div class="col-md-10">
                                         <input type="text" class="form-control @error('name') is-invalid @enderror" value="{{$subcategory->name}}" name="name" id="inputEmail3" placeholder="SubCategory Name"/>
@@ -44,36 +58,12 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="row mb-3">
-                                    <label for="inputEmail3" class="col-md-2 col-form-label">Category Name</label>
-                                    <div class="col-md-10">
-                                        <select class="form-control" name="category_id">
-                                            <option>--Select Category Name--</option>
-                                            @foreach($categories as $category)
-                                                <option value="{{$category->id}}"{{$category->id==$subcategory->category_id ? 'selected' : ''}} >{{$category->category_name}}</option>
-                                            @endforeach
-                                        </select>
-                                        @error('category_id')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div>
+
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-md-2 col-form-label">Description</label>
                                     <div class="col-md-10">
                                         <input type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{$subcategory->description}}" id="inputEmail3" placeholder="SubCategory Description"/>
                                         @error('description')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <label class="col-md-2 col-form-label">Image</label>
-                                    <div class="col-md-10">
-                                        <input type="file" id="imageInput" name="image" class="form-control @error('image') is-invalid @enderror">
-                                        <img src="{{asset($subcategory->image)}}" alt="" width="150" height="120">
-                                        @error('image')
-                                        <img id="imagePreview" class="mt-1" src="#" alt="Preview" style="display: none; max-width: 200px; max-height: 200px;">
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>

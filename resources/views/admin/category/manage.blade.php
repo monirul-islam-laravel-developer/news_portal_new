@@ -38,7 +38,6 @@
                             <th>S.N</th>
                             <th>Category name</th>
                             <th>Category Description</th>
-                            <th>Image</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -49,7 +48,6 @@
                             <td>{{$loop->iteration}}</td>
                             <td>{{$category->category_name}}</td>
                             <td>{{$category->description}}</td>
-                            <td><img src="{{asset($category->image)}}" alt="" height="50" width="80"></td>
 
                             <td>
                                 @if($category->status == 1)
