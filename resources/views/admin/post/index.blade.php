@@ -158,7 +158,7 @@
            $.ajax(
                 {
                     method:"GET",
-                    url:"{{url('get-sub-category-by-id')}}",
+                    url:"{{route('get-sub-category-by-id')}}",
                     data:{id:id},
                     dataType:"JSON",
                     success:function (response) {

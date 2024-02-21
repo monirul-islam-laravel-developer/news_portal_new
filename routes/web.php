@@ -163,7 +163,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
                 Route::get('/edit/{id}/{slug}',[PostController::class, 'edit'])->name('post.edit');
                 Route::post('/update/{id}/{slug}', [PostController::class, 'update'])->name('post.update');
                 Route::post('/delete/{id}', [PostController::class, 'delete'])->name('post.delete');
-                Route::get('/get-sub-category-by-id',[PostController::class,'getSubCategory'])->name('get-sub-category-by-id');
+                Route::get('/get-sub-category-id',[PostController::class,'getSubCategory'])->name('get-sub-category-by-id');
             });
             Route::prefix('video')->group(function () {
                 Route::get('/add', [VidioController::class, 'index'])->name('video.add');
