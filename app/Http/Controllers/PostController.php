@@ -36,7 +36,6 @@ class PostController extends Controller
     {
         $validated = $request->validate([
             'category_id'=>'required',
-            'subcategory_id'=>'required',
             'reporter_id'=>'required',
             'title'=>'required',
         ]);

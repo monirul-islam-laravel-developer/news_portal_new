@@ -69,7 +69,7 @@
                                         <select class="form-control @error('reporter_id') is-invalid @enderror" name="reporter_id">
                                             <option disabled selected>--Select Reporter--</option>
                                             @foreach($reporters as $reporter)
-                                                <option value="{{$reporter->id}}" {{ old('reporter_id') == $reporter->id ? 'selected' : '' }}>{{$reporter->name}}</option>
+                                                <option value="{{$reporter->id}}" {{ old('reporter_id') == $reporter->id ? 'selected' : '' }}>{{$reporter->name}},{{$reporter->designation}}</option>
                                             @endforeach
                                         </select>
                                         @error('reporter_id')

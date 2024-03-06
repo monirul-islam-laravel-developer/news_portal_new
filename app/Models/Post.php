@@ -48,6 +48,7 @@ class Post extends Model
     public static function newpost($request)
     {
         self::$post= new Post();
+        self::$post->author_id = auth()->id();
         self::$post->category_id=$request->category_id;
         self::$post->subcategory_id=$request->subcategory_id;
         self::$post->reporter_id=$request->reporter_id;
