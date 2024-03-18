@@ -17,6 +17,11 @@ use App\Http\Controllers\EditoralInfoController;
 use App\Http\Controllers\LogoController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\VidioController;
+use App\Http\Controllers\FrontNewsController;
+use App\Http\Controllers\FrontAboutUsController;
+use App\Http\Controllers\FrontVideoController;
+use App\Http\Controllers\FrontPhotoGalleryController;
+use App\Http\Controllers\FrontReporterController;
 
 use App\Models\RoleRoute;
 
@@ -43,10 +48,27 @@ function getRoleName($routeName)
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/aboutus', [FrontAboutUsController::class, 'index'])->name('aboutus');
 
-Route::get('/error', function () {
-    return view('errors.404');
-});
+Route::get('/videogallery', [FrontVideoController::class, 'index'])->name('videogallery');
+
+Route::get('/photogallery', [FrontPhotoGalleryController::class, 'index'])->name('photogallery');
+
+Route::get('/reporter', [FrontReporterController::class, 'index'])->name('reporter');
+Route::get('/reporter-detail/{id}/{slug}', [FrontReporterController::class, 'detail'])->name('reporter-detail');
+Route::get('/reporter-allnews/{id}/{slug}', [FrontReporterController::class, 'allnews'])->name('reporter-allnews');
+
+Route::get('/catagory-news/{id}/{slug}', [FrontNewsController::class, 'categoryPost'])->name('catagory-news');
+Route::get('/sub-category-news/{id}/{slug}', [FrontNewsController::class, 'subcategoryPost'])->name('sub-category-news');
+Route::get('/news-detail/{id}/{slug}', [FrontNewsController::class, 'postDetail'])->name('news-detail');
+Route::get('/all-news', [FrontNewsController::class, 'allNews'])->name('all-news');
+
+Route::get('/news-print/{id}/{slug}', [FrontNewsController::class, 'printNews'])->name('news-print');
+
+
+//Route::get('/error', function () {
+//    return view('errors.404');
+//});
 
 
 Route::get('/privacy-policy', [PrivacyController::class, 'page_view'])->name('privacy.view');
@@ -173,6 +195,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
                 Route::post('/update/{id}', [VidioController::class, 'update'])->name('video.update');
                 Route::post('/delete/{id}', [VidioController::class, 'delete'])->name('video.delete');
             });
+
         });
     });
 

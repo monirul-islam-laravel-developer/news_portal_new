@@ -329,10 +329,10 @@
                     <div class="collapse" id="videos">
                         <ul class="side-nav-second-level">
                             <li>
-                                <a href="{{route('video.add')}}">Add Post</a>
+                                <a href="{{route('video.add')}}">Add Video</a>
                             </li>
                             <li>
-                                <a href="{{route('video.manage')}}">Manage Post</a>
+                                <a href="{{route('video.manage')}}">Manage Video</a>
                             </li>
 
                         </ul>

@@ -151,4 +151,36 @@ class Post extends Model
     {
         return $this->belongsTo('App\Models\Reporter');
     }
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+
+    public function getBengaliTerm()
+    {
+        // Determine the current season based on the current month
+        $currentMonth = date('n');
+        switch ($currentMonth) {
+            case 12:
+            case 1:
+            case 2:
+                return 'শীতকাল'; // Shiṭkāl - Winter season
+            case 3:
+            case 4:
+                return 'বসন্তকাল'; // Bôshontokal - Spring season
+            case 5:
+            case 6:
+            case 7:
+                return 'গ্রীষ্মকাল'; // Grishmokal - Summer season
+            case 8:
+            case 9:
+                return 'বর্ষা'; // Bôrsha - Monsoon
+            case 10:
+            case 11:
+                return 'শরৎকাল'; // Shôrôtkal - Autumn season
+            default:
+                return 'হেমন্তকাল'; // Hemôntokal - Late Autumn/Winter
+        }
+    }
+
 }

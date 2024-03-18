@@ -44,5 +44,9 @@ class Category extends Model
         }
         self::$category->save();
     }
+    public function subCategory()
+    {
+        return $this->hasMany('App\Models\SubCategory');
+    }
 
 }

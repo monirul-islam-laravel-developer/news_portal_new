@@ -55,7 +55,7 @@
                                         <select class="form-control @error('subcategory_id') is-invalid @enderror" name="subcategory_id">
                                             <option disabled selected>--Select Sub Category--</option>
                                             @foreach($subcategories as $subcategory)
-                                                <option value="{{$subcategory->id}}" {{$subcategory->id==$post->subcategory_id ? 'selected' : ''}}>{{$subcategory->name}}</option>
+                                                <option value="{{$subcategory->id}}" {{$subcategory->id == $post->subcategory_id ? 'selected' : ''}}>{{$subcategory->name}}</option>
                                             @endforeach
                                         </select>
                                         @error('subcategory_id')

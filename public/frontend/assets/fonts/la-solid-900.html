@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="AnchorBarta">
+    <meta name="csrf-token" content="">
+     
+
+            <title> LaraFlash </title>
+        <meta name="keyword" content="জাহাজ, বন্দর, নৌযান, লাইটার জাহাজ, সিমেন্ট, ইস্পাত, শীপ, শিপিং, মাদার ভেসেল, ড্রেজার, ফিশিং ভেসেল, ডিজেল, নদী, সাগর, newspaper, online news, paper">
+        <meta name="description" content="বাংলাদেশসহ বিশ্বের সর্বশেষ সংবাদ শিরোনাম, প্রতিবেদন, বিশ্লেষণ, খেলা, বিনোদন, চাকরি, রাজনীতি ও বাণিজ্যের বাংলা নিউজ পড়তে ভিজিট করুন।">
+        <meta property="og:type" content="website" />
+      <meta property="og:title" content="This Is Facebook Share Title" />
+      <meta property="og:description" content="Popular Online Newspaper of Bangladesh"/>
+      <meta property="og:image" content="https://themebazar.xyz/laraflash/public/templateimage/63c291e9cb5c8.jpg" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="This Is Twitter Share Title" />
+    <meta name="twitter:description" content="Popular Online Newspaper of Bangladesh" />
+    <meta name="twitter:image" content="https://themebazar.xyz/laraflash/public/templateimage/63c291efebdb0.jpg" />
+    <meta name="brand_name" content="This Is Twitter Share Title" />
+    <meta name="twitter:creator" content="@themesbazar">
+    <meta name="twitter:site" content="@themesbazar">
+
+         
+     <link rel="icon" href="https://themebazar.xyz/laraflash/public/templateimage/63bbda7630384.gif">
+    
+    <!-- Css Link Start    -->
+    <link rel="stylesheet" href="https://themebazar.xyz/laraflash/public/frontend/assets/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://themebazar.xyz/laraflash/public/frontend/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://themebazar.xyz/laraflash/public/frontend/assets/css/stellarnav.css">
+   <link rel="stylesheet" href="https://themebazar.xyz/laraflash/public/frontend/assets/css/jquery-ui.css"> 
+    <link rel="stylesheet" href="https://themebazar.xyz/laraflash/public/frontend/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="https://themebazar.xyz/laraflash/public/frontend/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://themebazar.xyz/laraflash/public/frontend/assets/css/responsive.css">
+    <link rel="stylesheet" href="https://themebazar.xyz/laraflash/public/frontend/assets/css/all.css">
+    <link rel="stylesheet" href="https://themebazar.xyz/laraflash/public/frontend/style.css">
+
+
+    
+    
+    
+    
+    
+</head>
+
+
+      
+<script>
+                        setInterval(displayTime, 1000);
+
+function displayTime() {
+
+    const timeNow = new Date();
+
+    let hoursOfDay = timeNow.getHours();
+    let minutes = timeNow.getMinutes();
+    let seconds = timeNow.getSeconds();
+    let weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    let today = weekDay[timeNow.getDay()];
+    let months = timeNow.toLocaleString("default", {
+        month: "long"
+    });
+    let year = timeNow.getFullYear();
+    let period = "AM";
+
+    if (hoursOfDay > 12) {
+        hoursOfDay-= 12;
+        period = "PM";
+    }
+
+    if (hoursOfDay === 0) {
+        hoursOfDay = 12;
+        period = "AM";
+    }
+
+    hoursOfDay = hoursOfDay < 10 ? "0" + hoursOfDay : hoursOfDay;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    let time = hoursOfDay + ":" + minutes + ":" + seconds + " " + period;
+
+   document.getElementById('Clock').innerHTML = time ;
+    
+    var chars = {'1':'১','2':'২','3':'৩','4':'৪','5':'৫','6':'৬','7':'৭','8':'৮','9':'৯','0':'০','A':'এ','P':'পি','M':'এম'};
+    let str = document.getElementById("Clock").innerHTML; 
+    let res = str.replace(/[1234567890AMP]/g, m => chars[m]);
+    document.getElementById("Clock").innerHTML = res;
+
+}
+displayTime();
+
+                        </script>
+                        
+                        <script>
+setInterval(displayTimeen, 1000);
+
+function displayTimeen() {
+
+    const timeNow = new Date();
+
+    let hoursOfDay = timeNow.getHours();
+    let minutes = timeNow.getMinutes();
+    let seconds = timeNow.getSeconds();
+    let weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    let today = weekDay[timeNow.getDay()];
+    let months = timeNow.toLocaleString("default", {
+        month: "long"
+    });
+    let year = timeNow.getFullYear();
+    let period = "AM";
+
+    if (hoursOfDay > 12) {
+        hoursOfDay-= 12;
+        period = "PM";
+    }
+
+    if (hoursOfDay === 0) {
+        hoursOfDay = 12;
+        period = "AM";
+    }
+
+    hoursOfDay = hoursOfDay < 10 ? "0" + hoursOfDay : hoursOfDay;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    let time = hoursOfDay + ":" + minutes + ":" + seconds + " " + period;
+
+   document.getElementById('Clocken').innerHTML = time ;
+}
+displayTimeen();                                
+                                
+    </script>
+
+
+
+      
+    
+                   
+     <!--=============== Header section Start ========================-->
+     <header class="themesbazar_header">
+        <div class="container">
+             <div class="row">
+                 <div class="col-lg-5 col-md-5">
+                     <div class="date">
+                         <i class="lar la-calendar"></i>   
+                                                                                                   
+                                    <span id ="Clock" onload="displayTime()"></span>, রবিবার, ২৪ ডিসেম্বর ২০২৩
+                                    , 
+                                    <!------------ Bangla Date Code Start-->        
+      ১০ পৌষ ১৪৩০<!------------ Bangla Date Code Close-->   বঙ্গাব্দ
+                                     
+                                     
+                     </div>
+                     
+                    
+
+                 </div>
+
+                 <div class="col-lg-3 col-md-3">
+                    <form class="header-search" method="get" action="https://themebazar.xyz/laraflash/news/post/search">
+                            <input type="hidden" name="_token" value="">                        <input type="text" name="search"  placeholder="এখানে লিখুন">
+                        <button type="submit" value="খুজুন"> <i class="las la-search"></i> </button>
+                    </form>
+                     
+                    
+                 </div>
+                 <div class="col-lg-4 col-md-4">
+                     <div class="header-social">
+                         <ul>
+                                                                                     <li><a href="https://www.facebook.com/themesbazar"> <i class="lab la-facebook-f"></i> </a></li>
+                                                                                              <li><a href="https://www.twitter.com/themesbazar"> <i class="lab la-twitter"></i> </a></li>
+                                                                                              <li><a href="https://www.linkedin.com/themesbazar"> <i class="lab la-linkedin-in"></i> </a></li>
+                                                                                              <li><a href="https://www.youtube.com/themesbazar"> <i class="lab la-youtube"></i> </a></li>
+                                                          
+                             
+                         </ul>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+        <!--=============== Logo banner section Start ========================-->
+              <section class="logo-banner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <div class="logo">
+                              <a href="https://themebazar.xyz/laraflash"> <img src="https://themebazar.xyz/laraflash/public/templateimage/63c2917468624.gif" alt="LaraFlash"></a> 
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <div class="banner">
+                                                                         <a href="https://themesbazar.com" target="_blank"><img src="https://themebazar.xyz/laraflash/public/templateimage/63ad66eeaa3fc.gif" alt="LaraFlash"></a>
+                                         
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+     <!--=============== Logo banner section End ========================-->
+
+
+
+     </header>
+     <!--=============== Header section End ========================-->
+
+
+                 
+     
+                    
+                    <!--=======================
+                        Menu-section-Start
+                    ==========================-->           
+        <div class="menu_section" id="myHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="mobileLogo">
+                            <a href="https://themebazar.xyz/laraflash"> <img src="https://themebazar.xyz/laraflash/public/templateimage/63c2917a6c312.gif" alt="LaraFlash"></a> 
+                        </div>
+                        <h1 class="stellarnav">
+                            <ul>
+                            <li class="current-item"><a href="https://themebazar.xyz/laraflash"> <i class="las la-home"></i> </a></li>
+                                
+
+                                                            
+                                <li><a href="https://themebazar.xyz/laraflash/news/category/national" >জাতীয়</a>
+
+                                                                        <ul>
+                                        
+                                                        
+                                        <li><a href="https://themebazar.xyz/laraflash/news/subcategory/crime" >অপরাধ</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/subcategory/economy" >অর্থনীতি</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/subcategory/special-news" >বিশেষ প্রতিবেদন</a>
+                                                          
+                                                          
+                                        </li>
+                                                                            </ul>
+                                                                    </li>
+                                                            
+                                <li><a href="https://themebazar.xyz/laraflash/news/category/politics" >রাজনীতি</a>
+
+                                                                        <ul>
+                                        
+                                                        
+                                        <li><a href="https://themebazar.xyz/laraflash/news/subcategory/AwamiLeague" >আওয়ামীলীগ</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/subcategory/BNP" >বিএনপি</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/subcategory/other" >অন্যান্য</a>
+                                                          
+                                                          
+                                        </li>
+                                                                            </ul>
+                                                                    </li>
+                                                            
+                                <li><a href="https://themebazar.xyz/laraflash/news/category/international" >আন্তর্জাতিক</a>
+
+                                                                    </li>
+                                                            
+                                <li><a href="https://themebazar.xyz/laraflash/news/category/sport" >খেলাধুলা</a>
+
+                                                                        <ul>
+                                        
+                                                        
+                                        <li><a href="https://themebazar.xyz/laraflash/news/subcategory/cricket" >ক্রিকেট</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/subcategory/football" >ফুটবল</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/subcategory/other-sports" >অন্যান্য খেলা</a>
+                                                          
+                                                          
+                                        </li>
+                                                                            </ul>
+                                                                    </li>
+                                                            
+                                <li><a href="https://themebazar.xyz/laraflash/news/category/entertainment" >বিনোদন</a>
+
+                                                                        <ul>
+                                        
+                                                        
+                                        <li><a href="https://themebazar.xyz/laraflash/news/subcategory/bollywood" >বলিউড</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/subcategory/hollywood" >হলিউড</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/subcategory/smallscreen" >ছোটপর্দা</a>
+                                                          
+                                                          
+                                        </li>
+                                                                            </ul>
+                                                                    </li>
+                                                            
+                                <li><a href="https://themebazar.xyz/laraflash/news/category/it" >তথ্যপ্রযুক্তি</a>
+
+                                                                    </li>
+                                                            
+                                <li><a href="https://themebazar.xyz/laraflash/news/category/bangladesh" >সারাদেশ</a>
+
+                                                                    </li>
+                                                            
+                                <li><a href="https://themebazar.xyz/laraflash/news/category/campus" >ক্যাম্পাস</a>
+
+                                                                    </li>
+                                                            
+                                <li><a href="https://themebazar.xyz/laraflash/news/category/media" >গণমাধ্যম</a>
+
+                                                                    </li>
+                                                            
+                                <li><a href="#" >আরো</a>
+
+                                                                        <ul>
+                                        
+                                                        
+                                        <li><a href="https://themebazar.xyz/laraflash/news/category/jobs" >চাকুরী</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/category/religion" >ধর্ম</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/category/agriculture" >কৃষি</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/category/feature" >ফিচার</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/category/lifestyle" >লাইফস্টাইল</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/category/traveling" >ভ্রমণ</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/category/editorial" >সম্পাদকীয়</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/category/health" >স্বাস্থ্য</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/category/court-of-law" >আইন আদালত</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/category/opinion" >মতামত</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/category/education-&amp;-culture" >শিক্ষা ও সংস্কৃতি</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/category/trade-&amp;-commerce" >ব্যবসা ও বাণিজ্য</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/category/stock-market" >শেয়ার বাজার</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/category/probash" >প্রবাসে বাংলাদেশ</a>
+                                                          
+                                                          
+                                        </li>
+                                                                    
+                                        <li><a href="https://themebazar.xyz/laraflash/news/category/press-release" >প্রেস বিজ্ঞপ্তি</a>
+                                                          
+                                                          
+                                        </li>
+                                                                            </ul>
+                                                                    </li>
+                                                            
+                            </ul>
+                        </h1><!-- .stellarnav -->
+                    </div>
+                    
+                
+                    
+                    
+                </div>
+            </div>
+            
+        </div>
+                    <!--=======================
+                        Menu-section-End
+                    ==========================-->
+           
+                                     
+                  
+        <div class="top-scroll-section5">  
+            <div class="container">
+
+                <div class="alert" role="alert">
+                    <div class="scroll-section5">
+                        <div class="row">
+                            <div class="col-md-12 top_scroll2"> 
+                                <div class="scroll5-left">
+                                    <div id="scroll5-left">
+                                        <span> সংবাদ শিরোনাম :  </span>
+                                    </div>
+                            
+                                </div>
+                            
+                                <div class="scroll5-right">
+                                    <marquee direction="left" scrollamount="5px" onmouseover="this.stop()" onmouseout="this.start()"> 
+                                                                         
+                                        <a href=" https://themebazar.xyz/laraflash/136 "> <i class="las la-bullseye"></i>  এক্সিকিউটিভ মোটরস বাংলাদেশে আনলো ‘বিএমডব্লিউ এক্স সেভেন’ </a>
+                                                                         
+                                        <a href=" https://themebazar.xyz/laraflash/5 "> <i class="las la-bullseye"></i>  আগামী জাতীয় সংসদ নির্বাচন ইভিএম না ব্যালট, জানালো ইসি </a>
+                                                                         
+                                        <a href=" https://themebazar.xyz/laraflash/4 "> <i class="las la-bullseye"></i>  গ্রাহক পর্যায়ে বিদ্যুতের দাম বাড়ানোর সুপারিশ </a>
+                                                                         
+                                        <a href=" https://themebazar.xyz/laraflash/3 "> <i class="las la-bullseye"></i>  বাংলাদেশের তৈরি পোশাকের বড় বাজার হতে পারে ব্রাজিল : দেশটির রাষ্ট্রদূত </a>
+                                                                         
+                                        <a href=" https://themebazar.xyz/laraflash/2 "> <i class="las la-bullseye"></i>  বাংলাদেশের পাসপোর্টের মান অনেক বেড়েছে: পররাষ্ট্রমন্ত্রী </a>
+                                                                         
+                                        <a href=" https://themebazar.xyz/laraflash/1 "> <i class="las la-bullseye"></i>  ২০২৩ সালে কতজন হজে যেতে পারবেন জানালেন ধর্ম প্রতিমন্ত্রী </a>
+                                                                            
+                                    
+                                    </marquee>
+                                </div>
+                                <div class="scroolbar5">
+                                    <button data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!--============Scroll 05 End==============-->
+                                        
+                   
+
+
+
+
+             
+
+
+<style>
+    .error-page {
+ padding:10px 0
+}
+.error-wrpp {
+ text-align:center;
+ margin-bottom:10px
+}
+.error-title {
+ font-size:100px;
+ font-weight:700;
+ letter-spacing:7px;
+ margin-bottom:0;
+ -webkit-text-stroke:3px #9a1515;
+ -webkit-text-fill-color:#fff;
+ -webkit-animation:fill .6s infinite alternate;
+ text-shadow:0 2px 4px #000;
+ display:inline-block
+}
+@-webkit-keyframes fill {
+ from {
+  -webkit-text-fill-color:#9a1515
+ }
+ to {
+  -webkit-text-fill-color:#ddd
+ }
+}
+.error-page-sub {
+ font-size:40px;
+ margin-top:2px;
+ font-weight:600;
+ color:#535151
+}
+.error-page-item {
+ font-size:25px;
+ letter-spacing:.5px;
+ color:#000;
+ line-height:auto
+}
+.error-btn {
+ margin-top:10px
+}
+.error-btn a {
+ background:#9a1515;
+ padding:10px 30px;
+ display:inline-block;
+ text-transform:uppercase;
+ color:#fff;
+ text-decoration:none;
+ font-weight:600;
+ font-size:18px;
+ letter-spacing:2px;
+ -webkit-transition:.8s all;
+ -o-transition:.8s all;
+ transition:.8s all
+}
+.error-btn a:hover {
+ padding:10px 40px
+}
+
+
+</style>
+
+<div class="row">
+<div class="col-lg-12">
+<div class="error-page">
+<div class="error-wrpp">
+<div class="error-title">
+404
+</div>
+<div class="error-page-sub">
+কিছু পাওয়া যায় নি
+</div>
+ <div class="error-page-item">
+আমরা দু:খিত কোনো কিছু পাওয়া যায়নি দয়া করে আবার চেষ্টা করুন
+</div>
+<div class="error-btn">
+<a href="https://themebazar.xyz/laraflash"> প্রচ্ছদে যান </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+                            
+                            
+                          
+                            
+                            
+                            
+                        
+
+
+
+                        
+
+
+
+                        <!--=======================
+                            footer-area start
+                        ==========================-->
+            <footer class="footer-area">
+                <div class="container">
+                    
+                     
+                    <div class="footer-menu">
+                        <ul>
+                                                        <li><a href="https://themebazar.xyz/laraflash/news/page/1" > আমাদের সম্পর্কে </a></li>
+                                                        <li><a href="https://themebazar.xyz/laraflash/sitemap.xml" > সাইটম্যাপ </a></li>
+                                                        <li><a href="https://themebazar.xyz/laraflash/feed" > আরএসএস </a></li>
+                                                        <li><a href="https://themebazar.xyz/laraflash/all/video/gallery" > ভিডিও গ্যালারী </a></li>
+                                                        <li><a href="https://themebazar.xyz/laraflash/all/photo/gallery" > ফটোগ্যালারী </a></li>
+                                                        <li><a href="https://themebazar.xyz/laraflash/all/reporter/list" > আমাদের পরিবার </a></li>
+                                                        <li><a href="https://themebazar.xyz/laraflash/all/latest/news/post" > সকল নিউজ </a></li>
+                             
+                        </ul>
+                    </div>
+
+                     
+
+                    <div class="footerColor">
+                
+                        <div class="row">
+                            
+
+                            <div class="col-lg-12 col-md-12">
+
+                                
+                                
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                                                                <h3 class="footer-title">
+                                            সম্পাদকীয় :
+                                        </h3>
+                                                                                <div class="footer-content">
+                                            <p align="left">সম্পাদক ও প্রকাশক : আব্দুল হাসিম চৌধুরী</p><p align="left">নির্বাহী সম্পাদক : আবু রায়হান<br></p><p align="left">বার্তা সম্পাদক : আবু হুরায়রা চৌধুরী</p><p align="left"><br></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                                                                <h3 class="footer-title">
+                                            অফিস :
+                                        </h3>
+                                                                                <div class="footer-content">
+                                            <p align="left">অফিস : মিরপুর, ঢাকা, বাংলাদেশ-১২১৬</p><p align="left">ইমেইল : youremail@gmail.com</p><p align="left">মোবাইল : 01710-000000<br></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                
+                            </div>
+
+                        </div>
+                        <div class="copy_right_section">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="copy-right">
+                                        © All rights reserved © LaraFlash
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="design-developed">
+                                     NewsScript Developed BY  <a href="https://www.themesbazar.com/" target="_blank" title="ThemesBazar.com"> ThemesBazar.com  </a>  
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <a href="" class="scrollToTop"><i class="las la-long-arrow-alt-up"></i></a>
+                   
+                </div>
+            </footer>
+
+
+
+                         <!--=======================
+                            footer-area-End
+                        ==========================-->
+
+                        <div class="footer-scrool">
+                            <div class="footer-scrool-1">
+                                <span>নোটিশ </span>
+                            </div>
+                               
+                           <div class="footer-scrool-2">
+                               <a href="#"><marquee direction="left" scrollamount="5px" onmouseover="this.stop()" onmouseout="this.start()"><i class="lar la-dot-circle"></i> পরীক্ষামূলক সম্প্রচার চলছে ।  পরীক্ষামূলক সম্প্রচার চলছে ।  পরীক্ষামূলক সম্প্রচার চলছে ।  পরীক্ষামূলক সম্প্রচার চলছে ।  পরীক্ষামূলক সম্প্রচার চলছে ।  পরীক্ষামূলক সম্প্রচার চলছে ।  পরীক্ষামূলক সম্প্রচার চলছে ।  পরীক্ষামূলক সম্প্রচার চলছে । </marquee></a>
+                           </div>
+                       </div>
+
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           
+                                              
+                    
+       
+       
+        
+        <script src="https://themebazar.xyz/laraflash/public/frontend/assets/js/jquery-3.5.1.min.js"></script>
+        <script src="https://themebazar.xyz/laraflash/public/frontend/assets/js/bootstrap.min.js"></script>
+        <script src="https://themebazar.xyz/laraflash/public/frontend/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="https://themebazar.xyz/laraflash/public/frontend/assets/js/stellarnav.min.js"></script>
+        <script src="https://themebazar.xyz/laraflash/public/frontend/assets/js/owl.carousel.min.js"></script>
+        <script src="https://themebazar.xyz/laraflash/public/frontend/assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="https://themebazar.xyz/laraflash/public/frontend/assets/js/jquery-ui.js"></script>
+        <script src="https://themebazar.xyz/laraflash/public/frontend/assets/js/lazyload.min.js"></script>
+        <script src="https://themebazar.xyz/laraflash/public/frontend/assets/js/main.js"></script>
+</body>
+</html>
+            
+
